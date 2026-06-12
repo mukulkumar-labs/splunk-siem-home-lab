@@ -36,7 +36,6 @@ A hands-on cybersecurity home lab simulating a real-world SOC environment — bu
 | Nmap | Network reconnaissance / port scanning |
 | Hydra | RDP brute force simulation |
 | Windows 10 | Target machine with forwarder installed |
-| Metasploitable2 | Vulnerable Linux target (lab completeness) |
 | VMware Workstation | Virtualization platform |
  
 ---
