@@ -287,7 +287,6 @@ splunk-home-lab/
 Cybersecurity Student
  
 [![GitHub](https://github.com/mukulkumar-labs)
-[![LinkedIn](https://www.linkedin.com/in/mukul-kumar-cysec17/)
  
 ---
  
