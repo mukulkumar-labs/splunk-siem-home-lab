@@ -1,0 +1,59 @@
+# ============================================
+# Splunk SIEM Home Lab - Detection Rules
+# Author: Mukul
+# Target Host: win-ad (Windows 10)
+# ============================================
+
+# ----------------------------------
+# RULE 1: Brute Force Detection
+# EventCode 4625 - Account Failed to Logon
+# Detects repeated failed login attempts
+# ----------------------------------
+index="main" host="win-ad" EventCode=4625
+| stats count by Account_Name
+| where count > 10
+| sort -count
+
+
+# ----------------------------------
+# RULE 2: Failed Logins Over Time
+# Used for: Failed Logins Over Time panel (Line Chart)
+# ----------------------------------
+index="main" host="win-ad" EventCode=4625
+| timechart count span=5m
+
+
+# ----------------------------------
+# RULE 3: Attacker IP / Workstation Identification
+# Used for: Attacker Source IP panel (Statistics Table)
+# ----------------------------------
+index="main" host="win-ad" EventCode=4625
+| stats count by src_ip
+| sort -count
+
+
+# ----------------------------------
+# RULE 4: Login Success vs Failed Comparison
+# Used for: Login Success vs Failed panel (Column Chart)
+# ----------------------------------
+index="main" host="win-ad" (EventCode=4624 OR EventCode=4625)
+| eval Status=if(EventCode=4624,"Success","Failed")
+| timechart count by Status span=5m
+
+
+# ----------------------------------
+# RULE 5: Top Targeted Accounts
+# Used for: Top Targeted Accounts panel (Bar Chart)
+# ----------------------------------
+index="main" host="win-ad" EventCode=4625
+| top limit=5 Account_Name
+
+
+# ----------------------------------
+# RULE 6 (Bonus): Network Reconnaissance Detection
+# Detects Nmap-style port scanning via Windows Firewall logs
+# (if Security auditing for EventCode 5156/5157 is enabled)
+# ----------------------------------
+index="main" host="win-ad" (EventCode=5156 OR EventCode=5157)
+| stats count by src_ip
+| where count > 50
