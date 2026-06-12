@@ -243,15 +243,16 @@ splunk-home-lab/
 │   ├── splunk-home-page.png
 │   ├── configured-recieve-ports.png
 │   ├── splunk-forwarder-installation.png
-│   ├── inputs.confs-configuration.png
+│   ├── inputs.conf-configuration.png
 │   ├── outputs.conf-configuration.png
 │   ├── restarting-splunk-forwarder.png
 │   ├── verifying-windows-logs-on-splunk.png
 │   ├── nmap-scan-to-windows.png
 │   ├── nmap-scan-alert.png
 │   ├── brute-force-attack-on-windows.png
-│   ├── brute-force-alert.png
-│   ├── saving-alert-01.png
+│   ├── brute-force-alert-01.png
+│   ├── brute-force-alert-02.png
+│   ├──saving-alert-01.png
 │   ├── saving-alert-02.png
 │   ├── creating-dashboard.png
 │   ├── creating-panel-01.png
