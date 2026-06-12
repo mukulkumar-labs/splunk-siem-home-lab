@@ -134,7 +134,8 @@ hydra -l administrator -P /usr/share/wordlists/rockyou.txt \
  
 **16. Brute Force Detected in Splunk**
 Splunk captured `EventCode 4625` (failed logon) events with the attacker's account name, workstation, and source IP.
-![Brute Force Alert](screenshots/brute-force-alert.png)
+![Brute Force Alert](screenshots/brute-force-alert-01.png)
+![Brute Force Alert](screenshots/brute-force-alert-02.png)
  
 ---
  
