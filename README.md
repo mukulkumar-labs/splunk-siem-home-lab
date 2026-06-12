@@ -91,7 +91,7 @@ Installed Universal Forwarder on the Windows 10 target machine.
  
 **9. inputs.conf Configuration**
 Configured `inputs.conf` to monitor Windows Security event logs.
-![inputs.conf](screenshots/inputs.confs-configuration.png)
+![inputs.conf](screenshots/inputs.conf-configuration.png)
  
 **10. outputs.conf Configuration**
 Configured `outputs.conf` to point the forwarder to the Splunk indexer (Ubuntu IP, port 9997).
