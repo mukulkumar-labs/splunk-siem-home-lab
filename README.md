@@ -1,5 +1,5 @@
 # splunk-siem-home-lab
-A hands-on cybersecurity home lab simulating a real-world SOC environment — built from scratch to detect network reconnaissance and brute force attacks using Splunk Enterprise, Kali Linux, and Windows 10.
+SOC home lab — detected Nmap recon and RDP brute force attacks via custom SPL queries, MITRE ATT&CK-mapped, with alerting and a 4-panel SOC dashboard built in Splunk Enterprise.
 
 > **Goal:** Set up Splunk Enterprise as a SIEM, configure a Windows Universal Forwarder, simulate Nmap scans and RDP brute force attacks from Kali, write SPL detection rules, configure alerts, and build a SOC analyst dashboard.
  
@@ -135,6 +135,17 @@ hydra -l administrator -P /usr/share/wordlists/rockyou.txt \
 Splunk captured `EventCode 4625` (failed logon) events with the attacker's account name, workstation, and source IP.
 ![Brute Force Alert](screenshots/brute-force-alert-01.png)
 ![Brute Force Alert](screenshots/brute-force-alert-02.png)
+
+---
+
+## 🎯 MITRE ATT&CK Mapping
+
+| # | Attack | Tool | MITRE Technique | Tactic | Severity | Detected |
+|---|--------|------|------------------|--------|----------|----------|
+| 1 | Network Reconnaissance | Nmap (`nmap -sS -A`) | T1046 — Network Service Discovery | Discovery | Medium | ✅ Yes |
+| 2 | RDP Brute Force | Hydra (rockyou.txt) | T1110.001 — Brute Force: Password Guessing | Credential Access | High | ✅ Yes |
+
+---
  
 ---
  
