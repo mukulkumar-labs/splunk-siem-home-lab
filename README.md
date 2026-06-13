@@ -147,8 +147,6 @@ Splunk captured `EventCode 4625` (failed logon) events with the attacker's accou
 
 ---
  
----
- 
 ### Phase 7 — Detection & Alerting
  
 **17 & 18. Saving the Detection Alert**
